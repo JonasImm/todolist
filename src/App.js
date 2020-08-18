@@ -19,11 +19,9 @@ function App() {
     fetchData();
   }, []);
 
-  /*  const handleClick = () => {
-    return createTodo();
-  };
-
-  console.log(handleClick); */
+  /* const handleClick = () => {
+    return alert("Test");
+  }; */
 
   return (
     <div className="app">
@@ -42,7 +40,7 @@ function App() {
         </List>
       </main>
       <footer className="app__footer">
-        <ButtonPlus />
+        <ButtonPlus onClick={() => alert("Test")} />
       </footer>
     </div>
   );
