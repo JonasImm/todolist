@@ -1,0 +1,8 @@
+{
+  "todos": [
+    { "id": 1, "title": "cook-server", "author": "Jonas" },
+    { "id": 2, "title": "clean-server", "author": "Jonas" }
+  ],
+  "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
+  "profile": { "name": "typicode" }
+}
