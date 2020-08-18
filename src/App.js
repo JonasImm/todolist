@@ -17,7 +17,9 @@ function App() {
     };
     fetchData();
   }, []);
+
   console.log(todos);
+
   return (
     <div className="app">
       <header className="app__header">
