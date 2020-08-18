@@ -1,7 +1,7 @@
 {
   "todos": [
-    { "id": 1, "title": "cook", "author": "Jonas", "date": "18/08/202" },
-    { "id": 2, "title": "clean", "author": "Jonas", "date": "19/08/202" },
-    { "id": 2, "title": "do laundry", "author": "Jonas", "date": "20/08/202" }
+    { "id": 1, "title": "Cook", "author": "Jonas", "date": "18/08/2020" },
+    { "id": 2, "title": "Clean", "author": "Jonas", "date": "19/08/2020" },
+    { "id": 2, "title": "Do laundry", "author": "Jonas", "date": "20/08/2020" }
   ]
 }
