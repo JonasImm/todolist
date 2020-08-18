@@ -1,10 +1,10 @@
 import React from "react";
 
-const ListItemText = () => {
+const ListItemText = ({ title, date }) => {
   return (
     <div>
-      <h4>Titel</h4>
-      <span>Some info</span>
+      <h4>{title}</h4>
+      <span>{date}</span>
     </div>
   );
 };

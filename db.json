@@ -1,8 +1,7 @@
 {
   "todos": [
-    { "id": 1, "title": "cook-server", "author": "Jonas" },
-    { "id": 2, "title": "clean-server", "author": "Jonas" }
-  ],
-  "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
-  "profile": { "name": "typicode" }
+    { "id": 1, "title": "Cook", "author": "Jonas", "date": "18/08/2020" },
+    { "id": 2, "title": "Clean", "author": "Jonas", "date": "19/08/2020" },
+    { "id": 2, "title": "Do laundry", "author": "Jonas", "date": "20/08/2020" }
+  ]
 }
