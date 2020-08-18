@@ -10,6 +10,7 @@ import ButtonPlus from "./components/ButtonPlus";
 
 function App() {
   const [todos, setTodos] = useState(null);
+  const [todo, setTodo] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,9 +20,13 @@ function App() {
     fetchData();
   }, []);
 
-  /* const handleClick = () => {
-    return alert("Test");
-  }; */
+  useEffect(() => {
+    const fetchToDo = async () => {
+      const todo = await createTodo();
+      setTodo(todo);
+    };
+    fetchToDo();
+  }, [todos]);
 
   return (
     <div className="app">
@@ -40,7 +45,7 @@ function App() {
         </List>
       </main>
       <footer className="app__footer">
-        <ButtonPlus onClick={() => alert("Test")} />
+        <ButtonPlus onClick={() => console.log(todo)} />
       </footer>
     </div>
   );

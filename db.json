@@ -1,7 +1,32 @@
 {
   "todos": [
-    { "id": 1, "title": "Cook", "author": "Jonas", "date": "18/08/2020" },
-    { "id": 2, "title": "Clean", "author": "Jonas", "date": "19/08/2020" },
-    { "id": 3, "title": "Do laundry", "author": "Jonas", "date": "20/08/2020" }
+    {
+      "id": 1,
+      "title": "Cook",
+      "author": "Jonas",
+      "date": "18/08/2020"
+    },
+    {
+      "id": 2,
+      "title": "Clean",
+      "author": "Jonas",
+      "date": "19/08/2020"
+    },
+    {
+      "id": 3,
+      "title": "Do laundry",
+      "author": "Jonas",
+      "date": "20/08/2020"
+    },
+    {
+      "title": "Test",
+      "date": "todayTest",
+      "id": 4
+    },
+    {
+      "title": "Test",
+      "date": "todayTest",
+      "id": 5
+    }
   ]
 }
