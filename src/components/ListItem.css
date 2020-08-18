@@ -1,0 +1,22 @@
+.ListItem {
+  display: flex;
+  align-items: center;
+  padding-top: 15px 0;
+}
+
+.ListItem > :nth-child(2) {
+  flex-grow: 2;
+}
+
+.ListItem img {
+  max-width: 20px;
+  margin: 0 5px;
+}
+
+.ListItem h4 {
+  margin: 0;
+}
+
+.ListItem > :last-child {
+  margin: 0 15px;
+}
