@@ -4,6 +4,7 @@ import List from "./components/List";
 import ListItem from "./components/ListItem";
 import ListItemIcon from "./components/ListItemIcon";
 import ListItemText from "./components/ListItemText";
+import ListItemCheck from "./components/ListItemCheck";
 
 function App() {
   return (
@@ -14,8 +15,9 @@ function App() {
       <main className="app__main">
         <List>
           <ListItem>
-            <ListItemIcon></ListItemIcon>
-            <ListItemText></ListItemText>
+            <ListItemIcon />
+            <ListItemText />
+            <ListItemCheck />
           </ListItem>
         </List>
       </main>
