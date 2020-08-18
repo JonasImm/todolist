@@ -5,7 +5,7 @@ import ListItem from "./components/ListItem";
 import ListItemIcon from "./components/ListItemIcon";
 import ListItemText from "./components/ListItemText";
 import ListItemCheck from "./components/ListItemCheck";
-import { getTodos } from "./api/todos";
+import { getTodos, createTodo } from "./api/todos";
 import ButtonPlus from "./components/ButtonPlus";
 
 function App() {
@@ -19,7 +19,11 @@ function App() {
     fetchData();
   }, []);
 
-  console.log(todos);
+  /*  const handleClick = () => {
+    return createTodo();
+  };
+
+  console.log(handleClick); */
 
   return (
     <div className="app">

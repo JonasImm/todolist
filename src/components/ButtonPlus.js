@@ -4,7 +4,7 @@ import "./ButtonPlus.css";
 
 const ButtonPlus = () => {
   return (
-    <button className="button">
+    <button onClick={() => alert("Test")} className="button">
       <img src={buttonSrc} alt="Button" />
     </button>
   );

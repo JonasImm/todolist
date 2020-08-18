@@ -3,6 +3,25 @@ export const getTodos = async () => {
   if (!response.ok) {
     throw new Error(response);
   }
+  const results = await response.json();
+
+  return results;
+};
+
+export const createTodo = async () => {
+  const response = await fetch("http://localhost:3333/todos", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      title: "Test",
+      date: "todayTest",
+    }),
+  });
+  if (!response.ok) {
+    throw new Error(response);
+  }
   const result = await response.json();
 
   return result;
