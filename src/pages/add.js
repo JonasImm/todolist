@@ -8,6 +8,7 @@ import ButtonHome from "../components/ButtonHome";
 const Add = () => {
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
+  const [loading, setLoading] = useState(false);
 
   function titleChange(title) {
     setTitle(title.target.value);
@@ -19,9 +20,11 @@ const Add = () => {
 
   async function handleSubmit(event) {
     event.preventDefault();
+    setLoading(true);
     await createTodo({ title, date });
     setTitle("");
     setDate("");
+    setLoading(false);
   }
   return (
     <>
@@ -50,7 +53,11 @@ const Add = () => {
               onChange={dateChange}
             />
           </label>
-          <input type="submit" value="Add task" disabled={!title || !date} />
+          <input
+            type="submit"
+            value="Add task"
+            disabled={!title || !date || loading}
+          />
         </form>
         <footer className="app__footer">
           <Link to="/">
