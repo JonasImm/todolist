@@ -50,7 +50,7 @@ const Add = () => {
               onChange={dateChange}
             />
           </label>
-          <input type="submit" value="Add task" />
+          <input type="submit" value="Add task" disabled={!title || !date} />
         </form>
         <footer className="app__footer">
           <Link to="/">
