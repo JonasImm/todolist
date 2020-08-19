@@ -8,15 +8,15 @@ export const getTodos = async () => {
   return results;
 };
 
-export const createTodo = async () => {
+export const createTodo = async (title, date) => {
   const response = await fetch("http://localhost:3333/todos", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      title: "Test",
-      date: "todayTest",
+      title: title,
+      date: date,
     }),
   });
   if (!response.ok) {
