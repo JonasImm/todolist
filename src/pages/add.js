@@ -8,6 +8,7 @@ import ButtonHome from "../components/ButtonHome";
 const Add = () => {
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
+  const [description, setdDescription] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
@@ -18,15 +19,19 @@ const Add = () => {
   function dateChange(date) {
     setDate(date.target.value);
   }
+  function descriptionChange(description) {
+    setdDescription(description.target.value);
+  }
 
   async function handleSubmit(event) {
     event.preventDefault();
     setLoading(true);
-    const todo = { title, date };
+    const todo = { title, date, description };
     try {
       await createTodo(todo);
       setTitle("");
       setDate("");
+      setdDescription("");
       setLoading(false);
     } catch (error) {
       console.error(error);
@@ -39,7 +44,7 @@ const Add = () => {
     <>
       <div className="add">
         <header className="app__header">
-          <h2>Create new Task</h2>
+          <h2>Create new task</h2>
         </header>
         <form className="form" onSubmit={handleSubmit}>
           <label>
@@ -62,11 +67,23 @@ const Add = () => {
               onChange={dateChange}
             />
           </label>
-          <input
-            type="submit"
-            value="Add task"
-            disabled={!title || !date || loading}
-          />
+          <label>
+            Description:
+            <input
+              type="text"
+              placeholder="Enter description"
+              name="Description"
+              value={description}
+              onChange={descriptionChange}
+            />
+          </label>
+          <div>
+            <input
+              type="submit"
+              value="Add task"
+              disabled={!title || !date || !description || loading}
+            />
+          </div>
           {error && <p>Something bad happend. Please try again.</p>}
         </form>
 
