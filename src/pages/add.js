@@ -16,7 +16,7 @@ const Add = () => {
           Date:
           <input type="date" name="Date" />
         </label>
-        <input type="submit" value="Add task" onClick={() => addTodo()} />
+        <input type="submit" value="Add task" onClick={addTodo()} />
       </form>
     </div>
   );

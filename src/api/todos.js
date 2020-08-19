@@ -22,7 +22,6 @@ export const createTodo = async (title, date) => {
   if (!response.ok) {
     throw new Error(response);
   }
-  const result = await response.json();
 
-  return result;
+  return response;
 };
