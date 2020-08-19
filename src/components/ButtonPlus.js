@@ -2,9 +2,9 @@ import React from "react";
 import buttonSrc from "../assets/add_button.svg";
 import "./ButtonPlus.css";
 
-const ButtonPlus = ({ onClick }) => {
+const ButtonPlus = () => {
   return (
-    <button onClick={(event) => onClick(event)} className="button">
+    <button className="button">
       <img src={buttonSrc} alt="Button" />
     </button>
   );

@@ -6,6 +6,7 @@ import ListItemText from "../components/ListItemText";
 import ListItemCheck from "../components/ListItemCheck";
 import { getTodos } from "../api/todos";
 import ButtonPlus from "../components/ButtonPlus";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [todos, setTodos] = useState(null);
@@ -36,7 +37,9 @@ const Home = () => {
           </List>
         </main>
         <footer className="app__footer">
-          <ButtonPlus onClick={() => console.log("test")} />
+          <Link to="/add">
+            <ButtonPlus />
+          </Link>
         </footer>
       </div>
     </>

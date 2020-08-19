@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { createTodo } from "../api/todos";
+import { Link } from "react-router-dom";
 
 const Add = () => {
   const [title, setTitle] = useState(null);
@@ -17,17 +18,20 @@ const Add = () => {
     createTodo(title, date);
   }
   return (
-    <form>
-      <label>
-        Title:
-        <input type="text" name="Title" onChange={titleChange} />
-      </label>
-      <label>
-        Date:
-        <input type="date" name="Date" onChange={dateChange} />
-      </label>
-      <input type="submit" value="Add task" onSubmit={addTodo()} />
-    </form>
+    <>
+      <form>
+        <label>
+          Title:
+          <input type="text" name="Title" onChange={titleChange} />
+        </label>
+        <label>
+          Date:
+          <input type="date" name="Date" onChange={dateChange} />
+        </label>
+        <input type="submit" value="Add task" onSubmit={addTodo()} />
+      </form>
+      <Link to="/">Tasks</Link>
+    </>
   );
 };
 
