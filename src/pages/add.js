@@ -14,9 +14,11 @@ const Add = () => {
     setDate(date.target.value);
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
-    createTodo(title, date);
+    await createTodo({ title, date });
+    setTitle("");
+    setDate("");
   }
   return (
     <>

@@ -8,16 +8,13 @@ export const getTodos = async () => {
   return results;
 };
 
-export const createTodo = async (title, date) => {
+export const createTodo = async (todo) => {
   const response = await fetch("http://localhost:3333/todos", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({
-      title: title,
-      date: date,
-    }),
+    body: JSON.stringify(todo),
   });
   if (!response.ok) {
     throw new Error(response);
