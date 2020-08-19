@@ -9,6 +9,7 @@ const Add = () => {
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   function titleChange(title) {
     setTitle(title.target.value);
@@ -21,10 +22,18 @@ const Add = () => {
   async function handleSubmit(event) {
     event.preventDefault();
     setLoading(true);
-    await createTodo({ title, date });
-    setTitle("");
-    setDate("");
-    setLoading(false);
+    const todo = { title, date };
+    try {
+      await createTodo(todo);
+      setTitle("");
+      setDate("");
+      setLoading(false);
+    } catch (error) {
+      console.error(error);
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
   }
   return (
     <>
@@ -58,7 +67,9 @@ const Add = () => {
             value="Add task"
             disabled={!title || !date || loading}
           />
+          {error && <p>Something bad happend. Please try again.</p>}
         </form>
+
         <footer className="app__footer">
           <Link to="/">
             <ButtonHome />
