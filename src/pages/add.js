@@ -3,6 +3,7 @@ import { createTodo } from "../api/todos";
 import { Link } from "react-router-dom";
 import "./add.css";
 import ButtonPlus from "../components/ButtonPlus";
+import ButtonHome from "../components/ButtonHome";
 
 const Add = () => {
   const [title, setTitle] = useState("");
@@ -52,7 +53,9 @@ const Add = () => {
           <input type="submit" value="Add task" />
         </form>
         <footer className="app__footer">
-          <Link to="/">Tasks</Link>
+          <Link to="/">
+            <ButtonHome />
+          </Link>
           <Link to="/add">
             <ButtonPlus />
           </Link>

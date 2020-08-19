@@ -7,6 +7,7 @@ import ListItemCheck from "../components/ListItemCheck";
 import { getTodos } from "../api/todos";
 import ButtonPlus from "../components/ButtonPlus";
 import { Link } from "react-router-dom";
+import ButtonHome from "../components/ButtonHome";
 
 const Home = () => {
   const [todos, setTodos] = useState(null);
@@ -37,7 +38,9 @@ const Home = () => {
           </List>
         </main>
         <footer className="app__footer">
-          <Link to="/">Tasks</Link>
+          <Link to="/">
+            <ButtonHome />
+          </Link>
           <Link to="/add">
             <ButtonPlus />
           </Link>
