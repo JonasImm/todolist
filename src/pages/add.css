@@ -8,34 +8,42 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-around;
   padding: 0 10px;
   color: #a3a3a3;
   font-size: 1.2rem;
 }
 
-.form > :first-child {
+.form > :first-child,
+.form > :nth-child(2),
+.form > :nth-child(3) {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
-}
-.form > :nth-child(2) {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  margin: 10px 0;
   width: 100%;
 }
 
 .form > :first-child input,
-.form > :nth-child(2) input {
+.form > :nth-child(2) input,
+.form > :nth-child(3) input {
+  color: #a3a3a3;
   border-style: none;
+  border-width: 1px;
   border-bottom-style: solid;
   border-color: #a3a3a3;
   background-color: transparent;
 }
+
 .form > :last-child {
-  align-self: center;
+  flex-grow: 2;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 30px;
+}
+
+.form > :last-child input {
   width: 50%;
   height: 5%;
   font-size: 1rem;

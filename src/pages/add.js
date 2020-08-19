@@ -31,6 +31,7 @@ const Add = () => {
       await createTodo(todo);
       setTitle("");
       setDate("");
+      setdDescription("");
       setLoading(false);
     } catch (error) {
       console.error(error);
@@ -76,11 +77,13 @@ const Add = () => {
               onChange={descriptionChange}
             />
           </label>
-          <input
-            type="submit"
-            value="Add task"
-            disabled={!title || !date || !description || loading}
-          />
+          <div>
+            <input
+              type="submit"
+              value="Add task"
+              disabled={!title || !date || !description || loading}
+            />
+          </div>
           {error && <p>Something bad happend. Please try again.</p>}
         </form>
 
