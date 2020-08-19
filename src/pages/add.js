@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import { createTodo } from "../api/todos";
 import { Link } from "react-router-dom";
+import "./add.css";
+import ButtonPlus from "../components/ButtonPlus";
+import ButtonHome from "../components/ButtonHome";
 
 const Add = () => {
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   function titleChange(title) {
     setTitle(title.target.value);
@@ -16,29 +21,64 @@ const Add = () => {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    await createTodo({ title, date });
-    setTitle("");
-    setDate("");
+    setLoading(true);
+    const todo = { title, date };
+    try {
+      await createTodo(todo);
+      setTitle("");
+      setDate("");
+      setLoading(false);
+    } catch (error) {
+      console.error(error);
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
   }
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Title:
+      <div className="add">
+        <header className="app__header">
+          <h2>Create new Task</h2>
+        </header>
+        <form className="form" onSubmit={handleSubmit}>
+          <label>
+            Title:
+            <input
+              type="text"
+              name="Title"
+              placeholder="Enter task name"
+              value={title}
+              onChange={titleChange}
+            />
+          </label>
+          <label>
+            Date:
+            <input
+              type="date"
+              placeholder="Enter date"
+              name="Date"
+              value={date}
+              onChange={dateChange}
+            />
+          </label>
           <input
-            type="text"
-            name="Title"
-            value={title}
-            onChange={titleChange}
+            type="submit"
+            value="Add task"
+            disabled={!title || !date || loading}
           />
-        </label>
-        <label>
-          Date:
-          <input type="date" name="Date" value={date} onChange={dateChange} />
-        </label>
-        <input type="submit" value="Add task" />
-      </form>
-      <Link to="/">Tasks</Link>
+          {error && <p>Something bad happend. Please try again.</p>}
+        </form>
+
+        <footer className="app__footer">
+          <Link to="/">
+            <ButtonHome />
+          </Link>
+          <Link to="/add">
+            <ButtonPlus />
+          </Link>
+        </footer>
+      </div>
     </>
   );
 };

@@ -7,8 +7,14 @@
 .app__header {
   background-color: var(--highlightColor);
   color: #fff;
+  border-radius: 0 0 15px 15px;
+  text-align: center;
 }
 
 .app__footer {
   box-shadow: 0 -10px 20px #a3a3a3;
+  border-radius: 15px 15px 0 0;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-around;
 }
