@@ -44,7 +44,7 @@ const Add = () => {
     <>
       <div className="add">
         <header className="app__header">
-          <h2>Create new Task</h2>
+          <h2>Create new task</h2>
         </header>
         <form className="form" onSubmit={handleSubmit}>
           <label>

@@ -32,6 +32,7 @@
   border-bottom-style: solid;
   border-color: #a3a3a3;
   background-color: transparent;
+  margin: 5px 0;
 }
 
 .form > :last-child {
@@ -45,7 +46,7 @@
 
 .form > :last-child input {
   width: 50%;
-  height: 5%;
+  height: 10%;
   font-size: 1rem;
   background-color: var(--highlightColor);
   border-radius: 5px;
