@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { createTodo } from "../api/todos";
 import { Link } from "react-router-dom";
+import "./add.css";
+import ButtonPlus from "../components/ButtonPlus";
 
 const Add = () => {
   const [title, setTitle] = useState("");
@@ -22,23 +24,40 @@ const Add = () => {
   }
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Title:
-          <input
-            type="text"
-            name="Title"
-            value={title}
-            onChange={titleChange}
-          />
-        </label>
-        <label>
-          Date:
-          <input type="date" name="Date" value={date} onChange={dateChange} />
-        </label>
-        <input type="submit" value="Add task" />
-      </form>
-      <Link to="/">Tasks</Link>
+      <div className="add">
+        <header className="app__header">
+          <h2>Create new Task</h2>
+        </header>
+        <form className="form" onSubmit={handleSubmit}>
+          <label>
+            Title:
+            <input
+              type="text"
+              name="Title"
+              placeholder="Enter task name"
+              value={title}
+              onChange={titleChange}
+            />
+          </label>
+          <label>
+            Date:
+            <input
+              type="date"
+              placeholder="Enter date"
+              name="Date"
+              value={date}
+              onChange={dateChange}
+            />
+          </label>
+          <input type="submit" value="Add task" />
+        </form>
+        <footer className="app__footer">
+          <Link to="/">Tasks</Link>
+          <Link to="/add">
+            <ButtonPlus />
+          </Link>
+        </footer>
+      </div>
     </>
   );
 };

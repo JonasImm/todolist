@@ -37,6 +37,7 @@ const Home = () => {
           </List>
         </main>
         <footer className="app__footer">
+          <Link to="/">Tasks</Link>
           <Link to="/add">
             <ButtonPlus />
           </Link>
