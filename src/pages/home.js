@@ -9,17 +9,21 @@ import { Link } from "react-router-dom";
 import ButtonHome from "../components/ButtonHome";
 import useAsync from "../hooks/useAsync";
 import { getTodos } from "../api/todos";
+import AppHeader from "../components/AppHeader";
+import AppMain from "../components/AppMain";
+import AppFooter from "../components/AppFooter";
+import AppContainer from "../components/AppContainer";
 
 const Home = () => {
   const { data: todos, loading, error } = useAsync(getTodos);
 
   return (
     <>
-      <div className="app">
-        <header className="app__header">
+      <AppContainer>
+        <AppHeader>
           <h2>To Do List</h2>
-        </header>
-        <main className="app__main">
+        </AppHeader>
+        <AppMain>
           <List>
             {error && <div>Could not get data. Please reload.</div>}
             {loading && <div>Loading...</div>}
@@ -31,16 +35,16 @@ const Home = () => {
               </ListItem>
             ))}
           </List>
-        </main>
-        <footer className="app__footer">
+        </AppMain>
+        <AppFooter>
           <Link to="/">
             <ButtonHome />
           </Link>
           <Link to="/add">
             <ButtonPlus />
           </Link>
-        </footer>
-      </div>
+        </AppFooter>
+      </AppContainer>
     </>
   );
 };

@@ -1,12 +1,16 @@
 import React from "react";
 import buttonSrc from "../assets/add_button.svg";
-import "./ButtonPlus.css";
+import styled from "@emotion/styled";
 
+const Button = styled.button`
+  background: none;
+  border: none;
+`;
 const ButtonPlus = () => {
   return (
-    <button className="button">
+    <Button>
       <img src={buttonSrc} alt="Button" />
-    </button>
+    </Button>
   );
 };
 
