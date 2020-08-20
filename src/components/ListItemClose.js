@@ -5,10 +5,12 @@ import styled from "@emotion/styled";
 const Button = styled.button`
   background: none;
   border: none;
-  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   > img {
     width: 40px;
-    margin: 0;
+    margin: 0 1px;
   }
 `;
 
