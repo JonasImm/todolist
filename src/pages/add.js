@@ -1,9 +1,58 @@
 import React, { useState } from "react";
 import { createTodo } from "../api/todos";
 import { Link } from "react-router-dom";
-import "./add.css";
 import ButtonPlus from "../components/ButtonPlus";
 import ButtonHome from "../components/ButtonHome";
+import AppHeader from "../components/AppHeader";
+import AppFooter from "../components/AppFooter";
+import AppContainer from "../components/AppContainer";
+import styled from "@emotion/styled";
+
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 10px;
+  color: #a3a3a3;
+  font-size: 1.2rem;
+  > :first-child,
+  > :nth-child(2),
+  > :nth-child(3) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px 0;
+    width: 100%;
+  }
+  > :first-child input,
+  > :nth-child(2) input,
+  > :nth-child(3) input {
+    color: #a3a3a3;
+    border-style: none;
+    border-width: 1px;
+    border-bottom-style: solid;
+    border-color: #a3a3a3;
+    background-color: transparent;
+    margin: 5px 0;
+  }
+  > :last-child {
+    flex-grow: 2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 30px;
+  }
+  > :last-child input {
+    width: 50%;
+    height: 10%;
+    font-size: 1rem;
+    background-color: var(--highlightColor);
+    border-radius: 5px;
+    border-style: none;
+    color: #fff;
+  }
+`;
 
 const Add = () => {
   const [title, setTitle] = useState("");
@@ -42,11 +91,11 @@ const Add = () => {
   }
   return (
     <>
-      <div className="add">
-        <header className="app__header">
+      <AppContainer>
+        <AppHeader>
           <h2>Create new task</h2>
-        </header>
-        <form className="form" onSubmit={handleSubmit}>
+        </AppHeader>
+        <Form onSubmit={handleSubmit}>
           <label>
             Title:
             <input
@@ -85,17 +134,17 @@ const Add = () => {
             />
           </div>
           {error && <p>Something bad happend. Please try again.</p>}
-        </form>
+        </Form>
 
-        <footer className="app__footer">
+        <AppFooter>
           <Link to="/">
             <ButtonHome />
           </Link>
           <Link to="/add">
             <ButtonPlus />
           </Link>
-        </footer>
-      </div>
+        </AppFooter>
+      </AppContainer>
     </>
   );
 };
