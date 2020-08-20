@@ -11,8 +11,8 @@ const ListItem = ({ children, href }) => {
       flex-grow: 2;
     }
     img {
-      max-width: 20px;
-      margin: 0 5px;
+      max-width: 10px;
+      margin: 0 10px;
     }
     h4 {
       margin: 0;
