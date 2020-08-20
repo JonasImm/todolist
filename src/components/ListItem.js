@@ -22,11 +22,7 @@ const ListItem = ({ children, href }) => {
     }
   `;
 
-  return (
-    <Container className="ListItem" href={href}>
-      {children}
-    </Container>
-  );
+  return <Container href={href}>{children}</Container>;
 };
 
 export default ListItem;
