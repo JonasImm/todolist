@@ -1,24 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import List from "../components/List";
 import ListItem from "../components/ListItem";
 import ListItemIcon from "../components/ListItemIcon";
 import ListItemText from "../components/ListItemText";
 import ListItemCheck from "../components/ListItemCheck";
-import { getTodos } from "../api/todos";
 import ButtonPlus from "../components/ButtonPlus";
 import { Link } from "react-router-dom";
 import ButtonHome from "../components/ButtonHome";
+import useAsync from "../hooks/useAsync";
+import { getTodos } from "../api/todos";
 
 const Home = () => {
-  const [todos, setTodos] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const todos = await getTodos();
-      setTodos(todos);
-    };
-    fetchData();
-  }, []);
+  const { data: todos, loading, error } = useAsync(getTodos);
 
   return (
     <>
@@ -28,6 +21,8 @@ const Home = () => {
         </header>
         <main className="app__main">
           <List>
+            {error && <div>Could not get data. Please reload.</div>}
+            {loading && <div>Loading...</div>}
             {todos?.map((todo) => (
               <ListItem key={todo.id}>
                 <ListItemIcon />
