@@ -29,12 +29,7 @@ const Home = () => {
             {error && <div>Could not get data. Please reload.</div>}
             {loading && <div>Loading...</div>}
             {todos?.map((todo) => (
-              <ListItem key={todo.id}>
-                <ListItemIcon />
-                <ListItemText title={todo.title} date={todo.date} />
-                <ListItemCheck />
-                <ListItemClose />
-              </ListItem>
+              <ListItem key={todo.id} todo={todo} />
             ))}
           </List>
         </AppMain>

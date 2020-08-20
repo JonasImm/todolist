@@ -22,3 +22,17 @@ export const createTodo = async (todo) => {
 
   return response;
 };
+export const checkBox = async (todo) => {
+  const response = await fetch("http://localhost:3333/todos", {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(todo),
+  });
+  if (!response.ok) {
+    throw new Error(response);
+  }
+
+  return response;
+};
