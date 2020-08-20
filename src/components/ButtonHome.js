@@ -1,11 +1,16 @@
 import React from "react";
 import homeSrc from "../assets/home.svg";
+import styled from "@emotion/styled";
 
+const Button = styled.button`
+  background: none;
+  border: none;
+`;
 function ButtonHome() {
   return (
-    <button className="button">
+    <Button>
       <img src={homeSrc} alt="Home Button" />
-    </button>
+    </Button>
   );
 }
 
