@@ -13,6 +13,7 @@ import AppHeader from "../components/AppHeader";
 import AppMain from "../components/AppMain";
 import AppFooter from "../components/AppFooter";
 import AppContainer from "../components/AppContainer";
+import ListItemClose from "../components/ListItemClose";
 
 const Home = () => {
   const { data: todos, loading, error } = useAsync(getTodos);
@@ -32,6 +33,7 @@ const Home = () => {
                 <ListItemIcon />
                 <ListItemText title={todo.title} date={todo.date} />
                 <ListItemCheck />
+                <ListItemClose />
               </ListItem>
             ))}
           </List>
